@@ -16,9 +16,9 @@
     <%= form.text_field :name, id: :dog_name %>
   </div>
 
-  <div class="field">
+  <div class="input-field col s12">
     <%= form.label :client_id %>
-    <%= form.collection_select(:client_id, Client.all, :id, :name) %>
+    <%= form.collection_select(:client_id, Client.all, :id, :name, :class =>"browser-default") %>
   </div>
 
   <div class="field">
