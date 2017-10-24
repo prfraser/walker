@@ -11,8 +11,18 @@
 </p>
 
 <p>
+  <strong>Start Address:</strong>
+  <%= @walk.start_address %>
+</p>
+
+<p>
+  <strong>Finish Address:</strong>
+  <%= @walk.finish_address %>
+</p>
+
+<p>
   <strong>Distance:</strong>
-  <%= @walk.distance %>
+  <%= Geocoder::Calculations.distance_between(@walk.start_address, @walk.finish_address)%>
 </p>
 
 <%= link_to 'Edit', edit_walk_path(@walk) %> |
