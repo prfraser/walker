@@ -9,6 +9,20 @@
   </head>
 
   <body>
+  	<ul id="dropdown1" class="dropdown-content">
+		  <li><%= link_to 'Manage Clients', clients_url %></li>
+		  <li><%= link_to 'Manage Walks', walks_url %></li>
+		  <li><%= link_to 'Manage Dogs', dogs_url %></li>
+		</ul>
+
+	  <nav>
+	    <div class="nav-wrapper">
+	      <a href="/" class="brand-logo">Walker</a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Options</a></li>
+	      </ul>
+	    </div>
+	  </nav>
     <%= yield %>
   </body>
 </html>
