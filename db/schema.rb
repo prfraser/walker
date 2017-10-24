@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024014346) do
+ActiveRecord::Schema.define(version: 20171024021724) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -47,10 +47,11 @@ ActiveRecord::Schema.define(version: 20171024014346) do
 
   create_table "walks", force: :cascade do |t|
     t.datetime "datetime"
-    t.integer "distance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "dog_id"
+    t.string "start_address"
+    t.string "finish_address"
     t.index ["dog_id"], name: "index_walks_on_dog_id"
   end
 

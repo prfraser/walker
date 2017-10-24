@@ -70,6 +70,6 @@ class WalksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def walk_params
-      params.require(:walk).permit(:dog_id, :datetime, :distance)
+      params.require(:walk).permit(:dog_id, :datetime, :start_address, :finish_address)
     end
 end

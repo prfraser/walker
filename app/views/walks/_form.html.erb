@@ -22,8 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :distance %>
-    <%= form.number_field :distance, id: :walk_distance %>
+    <%= form.label :start_address %>
+    <%= form.text_field :start_address %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :finish_address %>
+    <%= form.text_field :finish_address %>
   </div>
 
   <div class="actions">
