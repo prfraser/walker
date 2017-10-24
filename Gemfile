@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'materialize-sass'
+gem 'jquery-rails'
 gem 'geocoder'
 gem 'age_calculator'
 gem 'devise'

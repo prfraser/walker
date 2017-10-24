@@ -1,37 +1,39 @@
-<%= form_with(model: walk, local: true) do |form| %>
-  <% if walk.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(walk.errors.count, "error") %> prohibited this walk from being saved:</h2>
+  <%= form_with(model: walk, local: true) do |form| %>
+    <% if walk.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(walk.errors.count, "error") %> prohibited this walk from being saved:</h2>
 
-      <ul>
-      <% walk.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% walk.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="input-field col s12">
+      <%= form.label :dog_id %>
+      <%= form.collection_select(:dog_id, Dog.all, :id, :name) %>
+    </div>
+  <br>
+  <br>
+  <br>
+    <div class="field">
+      <%= form.label :datetime %>
+      <%= form.datetime_select :datetime, id: :walk_datetime %>
+    </div>
+
+    <div class="field">
+      <%= form.label :start_address %>
+      <%= form.text_field :start_address %>
+    </div>  
+
+    <div class="field">
+      <%= form.label :finish_address %>
+      <%= form.text_field :finish_address %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :dog_id %>
-    <%= form.collection_select(:dog_id, Dog.all, :id, :name) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :datetime %>
-    <%= form.datetime_select :datetime, id: :walk_datetime %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_address %>
-    <%= form.text_field :start_address %>
-  </div>  
-
-  <div class="field">
-    <%= form.label :finish_address %>
-    <%= form.text_field :finish_address %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
